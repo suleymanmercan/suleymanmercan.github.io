@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Süleyman Mercan – Backend Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Süleyman Mercan - Backend & DevOps odaklı yazılım geliştirici." />
+    <style>
+        :root {
+            --bg: #050608;
+            --bg-alt: #0c0f16;
+            --fg: #f5f5f5;
+            --muted: #9ca3af;
+            --accent: #38bdf8;
+            --accent-soft: rgba(56, 189, 248, 0.08);
+            --border: #1f2933;
+            --radius-lg: 18px;
+            --radius-sm: 8px;
+            --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.55);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #020617 0, #020617 40%, #020617 60%, #000 100%);
+            color: var(--fg);
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            opacity: 0.07;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+            mix-blend-mode: soft-light;
+            z-index: -1;
+        }
+
+        .page {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 36px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 999px;
+            background: radial-gradient(circle at 30% 20%, #38bdf8, #0369a1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: white;
+            box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+        }
+
+        .logo-text-main {
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .logo-text-sub {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        nav {
+            display: flex;
+            gap: 18px;
+            font-size: 13px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--muted);
+            padding-bottom: 2px;
+            border-bottom: 1px solid transparent;
+        }
+
+        nav a:hover {
+            color: var(--fg);
+            border-bottom-color: var(--accent);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.6fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .hero-left {
+            padding: 22px 22px 20px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(2, 6, 23, 0.98));
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        .hero-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 11px;
+            color: var(--muted);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            margin-bottom: 12px;
+        }
+
+        .hero-pill span.dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 999px;
+            background: #22c55e;
+            box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+        }
+
+        .hero h1 {
+            font-size: clamp(26px, 3vw, 32px);
+            margin: 0 0 10px;
+            letter-spacing: 0.01em;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-sub {
+            font-size: 14px;
+            color: var(--muted);
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 18px;
+        }
+
+        .hero-tag {
+            padding: 3px 9px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .btn {
+            font-size: 13px;
+            padding: 7px 13px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #020617;
+            font-weight: 500;
+            box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border-color: rgba(148, 163, 184, 0.4);
+            color: var(--muted);
+        }
+
+        .btn-ghost:hover {
+            border-color: var(--accent);
+            color: var(--fg);
+        }
+
+        .hero-meta {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .hero-right {
+            padding: 18px 18px 14px;
+            background: radial-gradient(circle at top left, #0f172a, #020617);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .hero-right-title {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .stack-item {
+            padding: 7px 8px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(148, 163, 184, 0.3);
+            background: rgba(15, 23, 42, 0.9);
+            font-size: 11px;
+        }
+
+        .stack-item-title {
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .stack-item-body {
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .hero-status {
+            padding: 8px 9px;
+            border-radius: var(--radius-sm);
+            background: var(--accent-soft);
+            border: 1px solid rgba(56, 189, 248, 0.45);
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero-status strong {
+            color: var(--fg);
+        }
+
+        .section {
+            margin-top: 10px;
+            padding: 18px 18px 16px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.92));
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .section-sub {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 10px;
+        }
+
+        .project-card {
+            padding: 10px 10px 9px;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.98), #020617);
+            font-size: 12px;
+        }
+
+        .project-name {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .project-name a {
+            color: var(--fg);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .project-name a:hover {
+            color: var(--accent);
+        }
+
+        .project-tag {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            color: var(--muted);
+        }
+
+        .project-body {
+            color: var(--muted);
+            line-height: 1.45;
+        }
+
+        .project-meta {
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .meta-pill {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(30, 64, 175, 0.6);
+            color: var(--muted);
+        }
+
+        .footer {
+            margin-top: 18px;
+            font-size: 11px;
+            color: var(--muted);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-right {
+                order: -1;
+            }
+
+            .page {
+                padding-inline: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="page">
+    <header>
+        <div class="logo">
+            <div class="logo-mark">SM</div>
+            <div>
+                <div class="logo-text-main">Süleyman Mercan</div>
+                <div class="logo-text-sub">Backend &amp; DevOps Odaklı Geliştirici</div>
+            </div>
+        </div>
+        <nav>
+            <a href="#projects">Projeler</a>
+            <a href="#stack">Teknik Yetenekler</a>
+            <a href="#contact">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="top">
+            <div class="hero-left">
+                <div class="hero-pill">
+                    <span class="dot"></span>
+                    <span>Şu an odak: Backend, ölçeklenebilir sistemler, DevOps</span>
+                </div>
+                <h1>
+                    Süleyman Mercan – <span>Backend Developer</span>
+                </h1>
+                <p class="hero-sub">
+                    .NET, Node.js ve PostgreSQL üzerinde çalışan; Docker, CI/CD ve bulut
+                    altyapılarını kullanan backend odaklı geliştirici. Amacım; okunabilir,
+                    test edilebilir ve sahaya alınabilir sistemler üretmek.
+                </p>
+                <div class="hero-tags">
+                    <span class="hero-tag">.NET &amp; C#</span>
+                    <span class="hero-tag">Node.js / TypeScript</span>
+                    <span class="hero-tag">PostgreSQL</span>
+                    <span class="hero-tag">Docker &amp; Containers</span>
+                    <span class="hero-tag">CI/CD</span>
+                    <span class="hero-tag">Linux &amp; Cloud</span>
+                </div>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="#projects">
+                        Backend Projelere Bak
+                        <span>↗</span>
+                    </a>
+                    <a class="btn btn-ghost" href="https://github.com/suleymanmercan" target="_blank" rel="noreferrer">
+                        GitHub Profili
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    Bu sayfa, backend tarafında neye odaklandığımı ve neleri ayağa kaldırabildiğimi
+                    net göstermek için tasarlandı. Fazla süs yok, doğrudan içerik var.
+                </div>
+            </div>
+
+            <aside class="hero-right" id="stack">
+                <div class="hero-right-title">
+                    <span>Teknik Odak Alanları</span>
+                    <span>Backend &amp; DevOps</span>
+                </div>
+                <div class="stack-grid">
+                    <div class="stack-item">
+                        <div class="stack-item-title">Uygulama Katmanı</div>
+                        <div class="stack-item-body">
+                            ASP.NET Core, Minimal API, REST, JWT, Clean/Hexagonal mimari.
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-title">Veri Katmanı</div>
+                        <div class="stack-item-body">
+                            PostgreSQL, EF Core / Prisma, migration, index, basic tuning.
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-title">Dağıtım &amp; CI/CD</div>
+                        <div class="stack-item-body">
+                            Docker, GitHub Actions, registry, basic pipeline otomasyonu.
+                        </div>
+                    </div>
+                    <div class="stack-item">
+                        <div class="stack-item-title">Altyapı</div>
+                        <div class="stack-item-body">
+                            Linux sunucular, reverse proxy, loglama, basit izleme yaklaşımları.
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-status">
+                    <span>Durum: <strong>Yeni projelere backend/infra katkısına açığım.</strong></span>
+                    <span>TR / Remote</span>
+                </div>
+            </aside>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="section-header">
+                <div class="section-title">SEÇİLMİŞ BACKEND PROJELERİ</div>
+                <div class="section-sub">Detaylar GitHub üzerinde yer alıyor.</div>
+            </div>
+            <div class="projects">
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/suleymanmercan/privflow" target="_blank" rel="noreferrer">
+                            PrivFlow
+                        </a>
+                        <span class="project-tag">Anonim geri bildirim / SaaS</span>
+                    </div>
+                    <div class="project-body">
+                        Kullanıcıların birbirine anonim geri bildirim bırakabildiği, kimlik yönetimi,
+                        oturum ve rate limiting içeren bir sistem. Backend tarafında kimlik, veri
+                        modelleme ve deployment odaklı çalıştım.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">.NET / Node karışık yapı</span>
+                        <span class="meta-pill">PostgreSQL</span>
+                        <span class="meta-pill">Docker + GitHub Actions</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/suleymanmercan/calendar-for-org" target="_blank" rel="noreferrer">
+                            Calendar for Org
+                        </a>
+                        <span class="project-tag">Etkinlik takvimi</span>
+                    </div>
+                    <div class="project-body">
+                        Topluluk ve kampüs etkinliklerini tek ekrana toplayan bir takvim sistemi.
+                        Rol bazlı erişim, admin paneli ve container tabanlı deployment ile gerçekçi
+                        bir backend senaryosu sunuyor.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">.NET / Next.js API</span>
+                        <span class="meta-pill">PostgreSQL</span>
+                        <span class="meta-pill">Containerized deploy</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/suleymanmercan/expensetrack" target="_blank" rel="noreferrer">
+                            ExpenseTrack
+                        </a>
+                        <span class="project-tag">Kişisel bütçe</span>
+                    </div>
+                    <div class="project-body">
+                        Kişisel harcama takibi için API odaklı basit ama genişletilebilir bir
+                        backend. Veri modeli, auth ve basit raporlama iskeleti hazır durumda.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">API-first tasarım</span>
+                        <span class="meta-pill">PostgreSQL</span>
+                        <span class="meta-pill">Docker</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/suleymanmercan/english-practice" target="_blank" rel="noreferrer">
+                            English Practice
+                        </a>
+                        <span class="project-tag">Dil çalışmaları</span>
+                    </div>
+                    <div class="project-body">
+                        JSON tabanlı veri setleri ve servis mantığıyla ilerleyen, backend’e
+                        uyarlanabilir bir çalışma alanı. İleride API’ye dönüştürülebilir temel
+                        tasarım kararları içeriyor.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">Veri modelleme</span>
+                        <span class="meta-pill">Modüler yapı</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-header">
+                <div class="section-title">İLETİŞİM & BAĞLANTI</div>
+                <div class="section-sub">Net soru, net cevap. Uzun cümlelere gerek yok.</div>
+            </div>
+            <p class="section-sub" style="margin-bottom: 10px;">
+                Backend, DevOps veya mevcut projelerim hakkında direkt iletişim kurmak isterseniz:
+            </p>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>GitHub</span>
+                        <span class="project-tag">Kod &amp; projeler</span>
+                    </div>
+                    <div class="project-body">
+                        Tüm aktif ve deneysel backend çalışmalarım GitHub üzerinde tutuluyor.
+                    </div>
+                    <div class="project-meta">
+                        <a class="meta-pill" href="https://github.com/suleymanmercan" target="_blank" rel="noreferrer">
+                            github.com/suleymanmercan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>E-posta</span>
+                        <span class="project-tag">Tercih edilen kanal</span>
+                    </div>
+                    <div class="project-body">
+                        İş birliği, soru veya teknik detay için e-posta üzerinden ulaşabilirsin.
+                        Mesaj net olursa cevap da net olur.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">mail: buraya kendi adresini yaz</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>© <span id="year"></span> Süleyman Mercan. Backend &amp; DevOps odaklı üretim.</span>
+            <span>Bu sayfa GitHub Pages üzerinde statik olarak yayınlanacak şekilde tasarlandı.</span>
+        </footer>
+    </main>
+</div>
+
+<script>
+    // basit yıl güncelleme
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
