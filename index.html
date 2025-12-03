@@ -363,6 +363,15 @@
             color: var(--muted);
         }
 
+        .meta-pill a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .meta-pill a:hover {
+            color: var(--accent);
+        }
+
         .footer {
             margin-top: 18px;
             font-size: 11px;
@@ -416,10 +425,11 @@
             <div class="logo-mark">SM</div>
             <div>
                 <div class="logo-text-main">Süleyman Mercan</div>
-                <div class="logo-text-sub">Backend &amp; DevOps Odaklı Geliştirici</div>
+                <div class="logo-text-sub">Backend Developer</div>
             </div>
         </div>
         <nav>
+            <a href="#experience">Deneyim</a>
             <a href="#projects">Projeler</a>
             <a href="#stack">Teknik Yetenekler</a>
             <a href="#contact">İletişim</a>
@@ -431,36 +441,40 @@
             <div class="hero-left">
                 <div class="hero-pill">
                     <span class="dot"></span>
-                    <span>Şu an odak: Backend, ölçeklenebilir sistemler, DevOps</span>
+                    <span>Aktif pozisyon arayışında: Backend Developer</span>
                 </div>
                 <h1>
                     Süleyman Mercan – <span>Backend Developer</span>
                 </h1>
                 <p class="hero-sub">
-                    .NET, Node.js ve PostgreSQL üzerinde çalışan; Docker, CI/CD ve bulut
-                    altyapılarını kullanan backend odaklı geliştirici. Amacım; okunabilir,
-                    test edilebilir ve sahaya alınabilir sistemler üretmek.
+                    .NET Core, ASP.NET ve PostgreSQL üzerinde REST API ve katmanlı mimari geliştiren backend developer. 
+                    EF Core, SOLID prensipler ve Clean Architecture ile okunabilir, ölçeklenebilir sistemler üretiyorum. 
+                    Docker, CI/CD ve modern DevOps araçlarıyla deployment süreçlerini yönetebiliyorum.
                 </p>
                 <div class="hero-tags">
-                    <span class="hero-tag">.NET &amp; C#</span>
-                    <span class="hero-tag">Node.js / TypeScript</span>
-                    <span class="hero-tag">PostgreSQL</span>
-                    <span class="hero-tag">Docker &amp; Containers</span>
-                    <span class="hero-tag">CI/CD</span>
-                    <span class="hero-tag">Linux &amp; Cloud</span>
+                    <span class="hero-tag">.NET Core &amp; C#</span>
+                    <span class="hero-tag">ASP.NET Core</span>
+                    <span class="hero-tag">REST API</span>
+                    <span class="hero-tag">EF Core &amp; Dapper</span>
+                    <span class="hero-tag">PostgreSQL / SQL Server</span>
+                    <span class="hero-tag">Docker &amp; CI/CD</span>
+                    <span class="hero-tag">Clean Architecture</span>
                 </div>
                 <div class="hero-actions">
                     <a class="btn btn-primary" href="#projects">
-                        Backend Projelere Bak
+                        Projelere Göz At
                         <span>↗</span>
                     </a>
-                    <a class="btn btn-ghost" href="https://github.com/suleymanmercan" target="_blank" rel="noreferrer">
+                    <a class="btn btn-ghost" href="https://github.com/slymanmrcan" target="_blank" rel="noreferrer">
                         GitHub Profili
+                    </a>
+                    <a class="btn btn-ghost" href="https://linkedin.com/in/slymanmrcan" target="_blank" rel="noreferrer">
+                        LinkedIn
                     </a>
                 </div>
                 <div class="hero-meta">
-                    Bu sayfa, backend tarafında neye odaklandığımı ve neleri ayağa kaldırabildiğimi
-                    net göstermek için tasarlandı. Fazla süs yok, doğrudan içerik var.
+                    📞 +90 551 952 45 00 | ✉️ slymanmrcan@gmail.com | 📍 Konya, Türkiye<br>
+                    Backend Developer pozisyonu için aktif arayış içindeyim. Remote çalışmaya uygun, hibrit modellere açığım.
                 </div>
             </div>
 
@@ -471,15 +485,15 @@
                 </div>
                 <div class="stack-grid">
                     <div class="stack-item">
-                        <div class="stack-item-title">Uygulama Katmanı</div>
+                        <div class="stack-item-title">Backend Framework</div>
                         <div class="stack-item-body">
-                            ASP.NET Core, Minimal API, REST, JWT, Clean/Hexagonal mimari.
+                            .NET Core, ASP.NET Core, Minimal API, REST, JWT Auth, Generic Repository.
                         </div>
                     </div>
                     <div class="stack-item">
-                        <div class="stack-item-title">Veri Katmanı</div>
+                        <div class="stack-item-title">ORM &amp; Database</div>
                         <div class="stack-item-body">
-                            PostgreSQL, EF Core / Prisma, migration, index, basic tuning.
+                            EF Core, Dapper, LINQ, SQL Server, PostgreSQL, migration &amp; indexing.
                         </div>
                     </div>
                     <div class="stack-item">
@@ -489,96 +503,175 @@
                         </div>
                     </div>
                     <div class="stack-item">
-                        <div class="stack-item-title">Altyapı</div>
+                        <div class="stack-item-title">Mimari &amp; Prensipler</div>
                         <div class="stack-item-body">
-                            Linux sunucular, reverse proxy, loglama, basit izleme yaklaşımları.
+                            Clean Architecture, SOLID, layered design, dependency injection.
                         </div>
                     </div>
                 </div>
                 <div class="hero-status">
-                    <span>Durum: <strong>Yeni projelere backend/infra katkısına açığım.</strong></span>
-                    <span>TR / Remote</span>
+                    <span>Durum: <strong>Backend Developer pozisyonu arıyorum</strong></span>
+                    <span>Konya / Remote / Hibrit</span>
                 </div>
             </aside>
+        </section>
+
+        <section class="section" id="experience">
+            <div class="section-header">
+                <div class="section-title">DENEYİM &amp; EĞİTİM</div>
+                <div class="section-sub">Profesyonel geçmiş ve akademik altyapı</div>
+            </div>
+            <div class="projects">
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>Yazılım Geliştirici</span>
+                        <span class="project-tag">09/2021 – 05/2022</span>
+                    </div>
+                    <div class="project-body">
+                        <strong>Logiting Teknoloji, Konya</strong><br>
+                        Backend geliştirme, REST API tasarımı, veri modeli oluşturma ve yazılım süreçlerinin 
+                        iyileştirilmesi üzerine çalıştım. .NET Core ekosisteminde enterprise çözümler geliştirdim.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>NEÜ – Matematik Bilgisayar Bilimleri</span>
+                        <span class="project-tag">2018 – 2021</span>
+                    </div>
+                    <div class="project-body">
+                        Algoritma, veri yapıları ve yazılım mühendisliği prensipleri üzerine temel eğitim aldım.
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>KTÜN – Bilgisayar Programcılığı</span>
+                        <span class="project-tag">2015 – 2018</span>
+                    </div>
+                    <div class="project-body">
+                        Temel programlama, veritabanı yönetimi ve uygulama geliştirme konularında ön lisans eğitimi.
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="section" id="projects">
             <div class="section-header">
                 <div class="section-title">SEÇİLMİŞ BACKEND PROJELERİ</div>
-                <div class="section-sub">Detaylar GitHub üzerinde yer alıyor.</div>
+                <div class="section-sub">GitHub üzerinde kaynak koda ulaşabilirsiniz</div>
             </div>
             <div class="projects">
                 <article class="project-card">
                     <div class="project-name">
-                        <a href="https://github.com/suleymanmercan/privflow" target="_blank" rel="noreferrer">
+                        <a href="https://github.com/slymanmrcan/eduCenter" target="_blank" rel="noreferrer">
+                            eduCenter
+                        </a>
+                        <span class="project-tag">Kurumsal Otomasyon</span>
+                    </div>
+                    <div class="project-body">
+                        Öğrenci, ders, ödeme ve sınav yönetimi için geliştirilmiş tam kapsamlı backend sistemi.
+                        Çok katmanlı mimari, servis yapıları, EF Core ile ilişkisel veri modeli ve rol-yetki 
+                        tabanlı erişim kontrolü içeriyor.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">.NET Core</span>
+                        <span class="meta-pill">EF Core</span>
+                        <span class="meta-pill">Clean Architecture</span>
+                        <span class="meta-pill">Role-based Auth</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/slymanmrcan/BaseLibrary" target="_blank" rel="noreferrer">
+                            BaseLibrary
+                        </a>
+                        <span class="project-tag">Core Library</span>
+                    </div>
+                    <div class="project-body">
+                        Yeni projelerde ortak altyapıyı standartlaştırmak için geliştirilen yeniden kullanılabilir 
+                        çekirdek kütüphane. Generic repository + unit of work pattern, exception middleware, 
+                        response modelleri ve ortak DTO/helper bileşenleri içeriyor.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">.NET Core Library</span>
+                        <span class="meta-pill">Generic Repository</span>
+                        <span class="meta-pill">Unit of Work</span>
+                        <span class="meta-pill">Middleware</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/slymanmrcan/TaskScheduler.API" target="_blank" rel="noreferrer">
+                            TaskScheduler.API
+                        </a>
+                        <span class="project-tag">Background Service</span>
+                    </div>
+                    <div class="project-body">
+                        Zamanlanmış görevler ve tetikleyici işlemler için hafif API servisi. Minimal API + 
+                        servis tabanlı yapı ile PostgreSQL üzerinde task-state yönetimi sağlıyor.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">Minimal API</span>
+                        <span class="meta-pill">PostgreSQL</span>
+                        <span class="meta-pill">Background Jobs</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/slymanmrcan/github-infra" target="_blank" rel="noreferrer">
+                            DevOps &amp; Infrastructure
+                        </a>
+                        <span class="project-tag">CI/CD Pipeline</span>
+                    </div>
+                    <div class="project-body">
+                        Docker containerization, GitHub Actions ile otomatik deployment ve infrastructure-as-code 
+                        yaklaşımları. DeviceInfo, KasaTakip gibi çeşitli projelerde DevOps entegrasyonu.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">Docker</span>
+                        <span class="meta-pill">GitHub Actions</span>
+                        <span class="meta-pill">CI/CD</span>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-name">
+                        <a href="https://github.com/slymanmrcan/privflow" target="_blank" rel="noreferrer">
                             PrivFlow
                         </a>
-                        <span class="project-tag">Anonim geri bildirim / SaaS</span>
+                        <span class="project-tag">Geliştirme Aşamasında</span>
                     </div>
                     <div class="project-body">
-                        Kullanıcıların birbirine anonim geri bildirim bırakabildiği, kimlik yönetimi,
-                        oturum ve rate limiting içeren bir sistem. Backend tarafında kimlik, veri
-                        modelleme ve deployment odaklı çalıştım.
+                        Anonim geri bildirim platformu. Kimlik yönetimi, oturum kontrolü, rate limiting ve 
+                        güvenli veri modelleme üzerine çalışılan modern bir SaaS projesi.
                     </div>
                     <div class="project-meta">
-                        <span class="meta-pill">.NET / Node karışık yapı</span>
-                        <span class="meta-pill">PostgreSQL</span>
-                        <span class="meta-pill">Docker + GitHub Actions</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-name">
-                        <a href="https://github.com/suleymanmercan/calendar-for-org" target="_blank" rel="noreferrer">
-                            Calendar for Org
-                        </a>
-                        <span class="project-tag">Etkinlik takvimi</span>
-                    </div>
-                    <div class="project-body">
-                        Topluluk ve kampüs etkinliklerini tek ekrana toplayan bir takvim sistemi.
-                        Rol bazlı erişim, admin paneli ve container tabanlı deployment ile gerçekçi
-                        bir backend senaryosu sunuyor.
-                    </div>
-                    <div class="project-meta">
-                        <span class="meta-pill">.NET / Next.js API</span>
-                        <span class="meta-pill">PostgreSQL</span>
-                        <span class="meta-pill">Containerized deploy</span>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-name">
-                        <a href="https://github.com/suleymanmercan/expensetrack" target="_blank" rel="noreferrer">
-                            ExpenseTrack
-                        </a>
-                        <span class="project-tag">Kişisel bütçe</span>
-                    </div>
-                    <div class="project-body">
-                        Kişisel harcama takibi için API odaklı basit ama genişletilebilir bir
-                        backend. Veri modeli, auth ve basit raporlama iskeleti hazır durumda.
-                    </div>
-                    <div class="project-meta">
-                        <span class="meta-pill">API-first tasarım</span>
+                        <span class="meta-pill">.NET Core</span>
                         <span class="meta-pill">PostgreSQL</span>
                         <span class="meta-pill">Docker</span>
+                        <span class="meta-pill">Coming Soon</span>
                     </div>
                 </article>
 
                 <article class="project-card">
                     <div class="project-name">
-                        <a href="https://github.com/suleymanmercan/english-practice" target="_blank" rel="noreferrer">
-                            English Practice
+                        <a href="https://github.com/slymanmrcan/calendar-for-org" target="_blank" rel="noreferrer">
+                            Calendar for Org
                         </a>
-                        <span class="project-tag">Dil çalışmaları</span>
+                        <span class="project-tag">Geliştirme Aşamasında</span>
                     </div>
                     <div class="project-body">
-                        JSON tabanlı veri setleri ve servis mantığıyla ilerleyen, backend’e
-                        uyarlanabilir bir çalışma alanı. İleride API’ye dönüştürülebilir temel
-                        tasarım kararları içeriyor.
+                        Topluluk ve kampüs etkinlikleri için takvim sistemi. Rol bazlı erişim, admin paneli 
+                        ve containerized deployment ile production-ready backend senaryosu.
                     </div>
                     <div class="project-meta">
-                        <span class="meta-pill">Veri modelleme</span>
-                        <span class="meta-pill">Modüler yapı</span>
+                        <span class="meta-pill">.NET Core</span>
+                        <span class="meta-pill">PostgreSQL</span>
+                        <span class="meta-pill">Coming Soon</span>
                     </div>
                 </article>
             </div>
@@ -586,53 +679,81 @@
 
         <section class="section" id="contact">
             <div class="section-header">
-                <div class="section-title">İLETİŞİM & BAĞLANTI</div>
-                <div class="section-sub">Net soru, net cevap. Uzun cümlelere gerek yok.</div>
+                <div class="section-title">İLETİŞİM</div>
+                <div class="section-sub">Backend Developer pozisyonu için görüşmeye hazırım</div>
             </div>
             <p class="section-sub" style="margin-bottom: 10px;">
-                Backend, DevOps veya mevcut projelerim hakkında direkt iletişim kurmak isterseniz:
+                Backend geliştirme, .NET Core projeleri veya iş birliği konularında direkt iletişim kurabilirsiniz:
             </p>
             <div class="projects">
-                <div class="project-card">
-                    <div class="project-name">
-                        <span>GitHub</span>
-                        <span class="project-tag">Kod &amp; projeler</span>
-                    </div>
-                    <div class="project-body">
-                        Tüm aktif ve deneysel backend çalışmalarım GitHub üzerinde tutuluyor.
-                    </div>
-                    <div class="project-meta">
-                        <a class="meta-pill" href="https://github.com/suleymanmercan" target="_blank" rel="noreferrer">
-                            github.com/suleymanmercan
-                        </a>
-                    </div>
-                </div>
-
                 <div class="project-card">
                     <div class="project-name">
                         <span>E-posta</span>
                         <span class="project-tag">Tercih edilen kanal</span>
                     </div>
                     <div class="project-body">
-                        İş birliği, soru veya teknik detay için e-posta üzerinden ulaşabilirsin.
-                        Mesaj net olursa cevap da net olur.
+                        İş görüşmeleri, proje detayları veya teknik sorularınız için e-posta ile ulaşabilirsiniz.
                     </div>
                     <div class="project-meta">
-                        <span class="meta-pill">mail: buraya kendi adresini yaz</span>
+                        <a class="meta-pill" href="mailto:slymanmrcan@gmail.com">
+                            slymanmrcan@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>Telefon</span>
+                        <span class="project-tag">Direkt görüşme</span>
+                    </div>
+                    <div class="project-body">
+                        Hızlı görüşme ve bilgi alışverişi için telefon iletişimi de mümkün.
+                    </div>
+                    <div class="project-meta">
+                        <span class="meta-pill">+90 551 952 45 00</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>GitHub</span>
+                        <span class="project-tag">Kod &amp; projeler</span>
+                    </div>
+                    <div class="project-body">
+                        Tüm aktif ve tamamlanmış backend projelerim GitHub üzerinde açık kaynak olarak bulunuyor.
+                    </div>
+                    <div class="project-meta">
+                        <a class="meta-pill" href="https://github.com/slymanmrcan" target="_blank" rel="noreferrer">
+                            github.com/slymanmrcan
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-name">
+                        <span>LinkedIn</span>
+                        <span class="project-tag">Profesyonel ağ</span>
+                    </div>
+                    <div class="project-body">
+                        Profesyonel geçmiş, bağlantılar ve güncellemeler için LinkedIn profilimi inceleyebilirsiniz.
+                    </div>
+                    <div class="project-meta">
+                        <a class="meta-pill" href="https://linkedin.com/in/slymanmrcan" target="_blank" rel="noreferrer">
+                            linkedin.com/in/slymanmrcan
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <footer class="footer">
-            <span>© <span id="year"></span> Süleyman Mercan. Backend &amp; DevOps odaklı üretim.</span>
-            <span>Bu sayfa GitHub Pages üzerinde statik olarak yayınlanacak şekilde tasarlandı.</span>
+            <span>© <span id="year"></span> Süleyman Mercan. Backend Developer.</span>
+            <span>GitHub Pages üzerinde statik olarak yayınlanabilir.</span>
         </footer>
     </main>
 </div>
 
 <script>
-    // basit yıl güncelleme
     document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
